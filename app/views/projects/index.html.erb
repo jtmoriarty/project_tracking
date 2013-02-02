@@ -1,0 +1,23 @@
+<div>
+	<%= render :partial => 'projects/form' %>
+	<h3>All Projects</h3>
+	<table class="home_projects_table">
+		<tr class="header-row">
+			<th>Project Name</th>
+			<th>Description</th>
+			<th>Created On</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+		
+		<% @projects.each do |project| %>
+			<tr class="<%= cycle('even', 'odd') %>">
+				<td class="project_name"><%= project.project_name %></td>
+				<td class="project_descript"><%= project.project_description %></td>
+				<td><%= project.created_at %></td>
+				<td></td>
+				<td><%= link_to "Delete", project_path(project.id), :method=>:delete, :confirm=>"Are you sure?", :class=>:destroy %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>

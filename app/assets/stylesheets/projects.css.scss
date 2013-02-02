@@ -1,0 +1,73 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home_projects_table{
+	border-collapse: collapse;
+	width: 980px;
+	border: solid 1px #777;
+}
+
+th{
+	padding: 10px;
+	background-image: -webkit-linear-gradient(top, #aaa 0%, #777 100%);
+	text-align: left;
+	font-size: 22px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+
+td{
+	height: 100px;
+	padding: 10px;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+td.project_name{
+	width: 150px;
+}
+
+td.project_descript{
+	width: 350px;
+}
+
+tr.even{
+	background-image: -webkit-linear-gradient(top, #fff 0%, #ddd 100%);
+	border-bottom: solid 1px #777;
+}
+
+tr.odd{
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #999 100%);
+}
+
+#project_desc_txt{
+	font-size: 26px;
+	padding: 10px;
+	border: solid 1px #aaa;
+}
+
+#project_name_txt{
+	height: 40px;
+	width: 460px;
+	padding: 10px;
+	font-size: 26px;
+	border: solid 1px #aaa;
+}
+
+label{
+	font-size: 26px;
+	font-weight: 650;
+}
+
+#char_right{
+	float: right;
+	font-size: 20px;
+}
+
+#new_project_form_wrapper{
+	width: 480px;
+	padding: 20px;
+	background-color: #ddd;
+	font-family: Arial, Helvetica, sans-serif;
+}
