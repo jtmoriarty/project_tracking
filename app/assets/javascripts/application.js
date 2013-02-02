@@ -24,4 +24,9 @@ $(document).ready(function(){
 			$(this).unbind(e);
 		}
 	});
+
+	$('#add_project_btn').click(function(e){
+		e.preventDefault();
+		$('#new_project_wrapper').toggle();
+	});
 });

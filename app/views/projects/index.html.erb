@@ -1,5 +1,8 @@
 <div>
-	<%= render :partial => 'projects/form' %>
+	<div id="new_project_wrapper">
+		<%= render :partial => 'projects/form' %>
+	</div>
+	<div id="all_proj_list">
 	<h3>All Projects</h3>
 	<table class="home_projects_table">
 		<tr class="header-row">
@@ -20,4 +23,5 @@
 			</tr>
 		<% end %>
 	</table>
+</div>
 </div>
