@@ -1,0 +1,32 @@
+<div>
+	<div id="new_project_wrapper">
+		<%= render :partial => 'projects/form' %>
+	</div>
+	<div id="all_proj_list">
+	<h3>Edit</h3>
+	<%= form_for @projects do |f| %>
+		<%= f.label :project_name %>
+		<br />
+		<%= f.text_field :project_name %>
+
+		<br />
+		<br />
+
+		<%= f.label :project_description %>
+		<br />
+		<%= f.text_field :project_description %>
+		
+		<br />
+		<br />
+
+		<%= f.label 'Check if complete' %>
+		<%= f.check_box :project_status %>
+
+		<br />
+
+		<%= f.submit 'Save' %>
+	<% end %>
+	<%= link_to 'Cancel', projects_path %>
+	
+</div>
+</div>

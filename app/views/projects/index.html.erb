@@ -3,14 +3,16 @@
 		<%= render :partial => 'projects/form' %>
 	</div>
 	<div id="all_proj_list">
-	<h3>All Projects</h3>
+	<h3>Listing all Projects</h3>
 	<table class="home_projects_table">
 		<tr class="header-row">
 			<th>Project Name</th>
 			<th>Description</th>
 			<th>Created On</th>
 			<th>Status</th>
+			<th></th>
 			<th>Actions</th>
+			<th></th>
 		</tr>
 		
 		<% @projects.each do |project| %>
@@ -18,8 +20,16 @@
 				<td class="project_name"><%= project.project_name %></td>
 				<td class="project_descript"><%= project.project_description %></td>
 				<td><%= project.created_at %></td>
+				<% if project.project_status.nil? %>
+					<td class="status_cell">Not Complete</td>
+				<% elsif project.project_status == 1 %>
+					<td class="status_cell">Complete</td>
+				<% else %>
+					<td class="status_cell">Not Complete</td>
+				<% end %>
 				<td></td>
 				<td><%= link_to "Delete", project_path(project.id), :method=>:delete, :confirm=>"Are you sure?", :class=>:destroy %></td>
+				<td><%= link_to 'Edit', edit_project_path(project.id) %></td>
 			</tr>
 		<% end %>
 	</table>
