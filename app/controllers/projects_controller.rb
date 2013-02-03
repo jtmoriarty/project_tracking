@@ -42,9 +42,4 @@ class ProjectsController < ApplicationController
 		@project.destroy
 		redirect_to projects_path
 	end
-
-	def update_status_complete
-		
-		redirect_to projects_path
-	end
 end
