@@ -3,8 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .home_projects_table{
+	position: absolute;
 	border-collapse: collapse;
-	width: 100%;
+	width: 1600px;
+	margin-left: 305px;
+	margin-top: -16px;
+	border: solid 1px #777;
+}
+
+#top_info{
+	position:relative;
+	width: 1578px;
+	padding: 10px;
+	margin-left: 305px;
+	top: -1px;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #bbb 100%);
+	font-size: 20px;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	border: solid 1px #777;
+}
+
+#filter_wrapper{
+	float: left;
+	margin-top: -1px;
+	margin-left: -8px;
+	height: 900px;
+	width: 306px;
+	background-color: #ccc;
 	border: solid 1px #777;
 }
 
@@ -34,12 +60,22 @@ td.project_descript{
 	padding-right: 50px;
 }
 
+#proj_status_btn{
+	text-decoration: none;
+	height: 25px;
+	width: 70px;
+	color: #000;
+}
+
 td.status_cell{
 	width: 130px;
+	height: 25px;
+	text-align: center;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #aaa 100%);
 }
 
 #status_complete{
-	background-color: #0f7;
+	background-image: -webkit-linear-gradient(top, #0f7 0%, #0e0 100%);
 }
 
 tr.even{
@@ -91,7 +127,7 @@ label{
 	position: fixed;
 	width: 100%;
 	height: 45px;
-	margin-top: -24px;
+	margin-top: -22px;
 	margin-left: -12px;
 	padding: 10px;
 	background-color: #ddd;
@@ -140,7 +176,6 @@ label{
 #wrapper{
 	position: relative;
 	width: 100%;
-	/*margin: 0 auto;*/
 	top: 50px;
 }
 
@@ -166,8 +201,7 @@ label{
 }
 
 #all_proj_list{
-	width: 90%;
-	margin: 0 auto;
+	width: 100%;
 }
 
 #application_title{

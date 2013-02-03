@@ -16,6 +16,10 @@
 
 
 $(document).ready(function(){
+	var window_height = $(document).height();
+
+	$('#filter_wrapper').css('height', window_height - 75);
+
 	char = 0;
 	$('#project_desc_txt').keypress(function(e){
 		char++;
@@ -24,6 +28,7 @@ $(document).ready(function(){
 			$(this).unbind(e);
 		}
 	});
+
 
 
 	$('#add_project_btn').click(function(e){

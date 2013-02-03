@@ -2,9 +2,14 @@
 	<div id="new_project_wrapper">
 		<%= render :partial => 'projects/form' %>
 	</div>
+
 	<div id="all_proj_list">
-	<h3>Listing all Projects</h3>
+		<div id="filter_wrapper">
+
+		</div>
+
 	<table class="home_projects_table">
+		<h3 id="top_info">Listing all Projects</h3>
 		<tr class="header-row">
 			<th>Project Name</th>
 			<th>Short Description</th>
@@ -25,15 +30,15 @@
 				<td><%= project.created_at %></td>
 				<% if project.project_status.nil? %>
 					<td class="status_cell">
-						<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put %>
+						<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
 					</td>
 				<% elsif project.project_status == 1 %>
 					<td id="status_complete" class="status_cell">
-						<%= link_to 'Complete', project_path(project.id, project.project_status), :method => :put %>
+						<%= link_to 'Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
 					</td>
 				<% else %>
 					<td class="status_cell">
-						<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put %>
+						<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
 					</td>
 				<% end %>
 				<td></td>

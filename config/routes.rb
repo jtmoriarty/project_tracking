@@ -1,7 +1,6 @@
 ProjectList::Application.routes.draw do
   root :to => 'projects#index'
   resources :projects
-  match '/projects/:id' => 'projects#update_status_complete'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
