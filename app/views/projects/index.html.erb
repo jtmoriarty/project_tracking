@@ -28,7 +28,8 @@
 					<td class="status_cell">Not Complete</td>
 				<% end %>
 				<td></td>
-				<td><%= link_to "Delete", project_path(project.id), :method=>:delete, :confirm=>"Are you sure?", :class=>:destroy %></td>
+				<td><span class="delete_btn" id="<%= project.id %>">Delete</span></td>
+				<%= render :partial => 'delete_pannel', :locals => {:id => project.id} %>
 				<td><%= link_to 'Edit', edit_project_path(project.id) %></td>
 			</tr>
 		<% end %>

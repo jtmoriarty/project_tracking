@@ -4,7 +4,7 @@
 
 .home_projects_table{
 	border-collapse: collapse;
-	width: 980px;
+	width: 100%;
 	border: solid 1px #777;
 }
 
@@ -71,6 +71,7 @@ label{
 
 #new_project_form_wrapper{
 	width: 480px;
+	height: 520px;
 	padding: 20px;
 	background-color: #ddd;
 	font-family: Arial, Helvetica, sans-serif;
@@ -92,10 +93,10 @@ label{
 #add_project_btn{
 	position: absolute;
 	height: 22px;
-	width: 170px;
+	width: 148px;
 	padding: 15px;
 	margin-top: -3px;
-	margin-left: 40px;
+	margin-left: 100px;
 	font-size: 20px;
 	color: #fff;
 	text-decoration: none;
@@ -107,19 +108,38 @@ label{
 	background-image: -webkit-linear-gradient(top, #ddd 0%, #aaa 100%);
 }
 
+#save_project_btn{
+	position: absolute;
+	height: 60px;
+	width: 175px;
+	padding: 15px;
+	margin-top: -3px;
+	margin-left: 5px;
+	font-size: 20px;
+	color: #fff;
+	text-decoration: none;
+	border: solid 1px #000;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #999 100%);
+}
+
+#save_project_btn:hover{
+	background-image: -webkit-linear-gradient(top, #ddd 0%, #aaa 100%);
+	cursor: pointer;
+}
+
 #wrapper{
 	position: relative;
-	width: 1000px;
+	width: 100%;
 	/*margin: 0 auto;*/
 	top: 50px;
 }
 
 #new_project_wrapper{
-	position: absolute;
+	position: fixed;
 	background-color: #ddd;
 	box-shadow: 0px 0px 10px 1px #222;
-	margin-top: 0px;
-	margin-left: 40px;
+	margin-top: 50px;
+	margin-left: 90px;
 	z-index: 905;
 	display: none;
 }
@@ -136,7 +156,8 @@ label{
 }
 
 #all_proj_list{
-	margin-left: 300px;
+	width: 90%;
+	margin: 0 auto;
 }
 
 #application_title{
@@ -144,4 +165,57 @@ label{
 	margin-right: 50px;
 	margin-top: 3px;
 	color: #fff;
+}
+
+#delete_pannel_wrapper{
+	position: fixed;
+	margin-top: 200px;
+	margin-left: 600px;
+	width: 500px;
+	height: 130px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px 1px #333;
+	font-family: Arial, Helvetica, sans-serif;
+	display: none;
+}
+
+#delete_pannel_header{
+	height: 15px;
+	width: 510px;
+	padding: 15px;
+	margin-top: -20px;
+	margin-left: -20px;
+	margin-bottom: 20px;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #aaa 100%);
+	color: #fff;
+	font-size: 16px;
+	border-bottom: solid 1px #aaa;
+	cursor: move;
+}
+
+#delete_pannel_actions{
+	height: 15px;
+	width: 510px;
+	padding: 15px;
+	margin-top: 40px;
+	margin-left: -20px;
+	background-image: -webkit-linear-gradient(top, #ddd 0%, #bbb 100%);
+	color: #fff;
+	font-size: 16px;
+}
+
+.delete_pannel_close_btn{
+	display: block;
+	float: right;
+	color: #fff;
+}
+
+.delete_pannel_close_btn:hover{
+	color: #eee;
+	cursor: pointer;
+}
+
+.delete_btn{
+	cursor: pointer;
 }

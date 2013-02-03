@@ -4,12 +4,15 @@
   <title>ProjectList</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="translucent_overlay">
 	<div id="wrapper">
 		<%= render :partial => 'shared/top_nav' %>
 		<%= yield %>
 	</div>
+</div>
 </body>
 </html>

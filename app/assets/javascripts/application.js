@@ -29,4 +29,25 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('#new_project_wrapper').toggle();
 	});
+
+	$('.delete_btn').click(function(){
+		var element_id = $(this).attr('id');
+		$('body').css('background-color', '#555');
+		$('.home_projects_table').css('opacity', '0.3');
+		$('#top_nav').css('opacity', '0.3');
+		$('.delete_pannel_wrapper' + element_id).each(function() {
+    		$(this).parent().before(this);
+		});
+		$('.delete_pannel_wrapper' + element_id).css('z-index', '1000')
+		$('.delete_pannel_wrapper' + element_id).show();
+		$('.delete_pannel_wrapper' + element_id).draggable();
+	});
+
+	$('.delete_pannel_close_btn').click(function(){
+		var element_id = $(this).attr('id');
+		$('.delete_pannel_wrapper' + element_id).hide();
+		$('.home_projects_table').css('opacity', '1');
+		$('body').css('background-color', '#fff');
+		$('#top_nav').css('opacity', '1');
+	});
 });

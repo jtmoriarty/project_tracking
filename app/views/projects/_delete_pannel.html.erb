@@ -1,0 +1,7 @@
+<div class="delete_pannel_wrapper<%= id %>" id="delete_pannel_wrapper">
+	<div id="delete_pannel_header">Confirm deletion<span id="<%= id %>" class="delete_pannel_close_btn">X</span></div>
+	<div id="delete_pannel_body">Do you really want to delete this project?</div>
+	<div id="delete_pannel_actions">
+		<%= link_to "Delete", project_path(id), :method=>:delete, :class=>:destroy %>
+	</div>
+</div>
