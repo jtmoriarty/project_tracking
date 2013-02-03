@@ -25,12 +25,26 @@ class ProjectsController < ApplicationController
 	def update
 		@projects = Project.find(params[:id])
 		@projects.update_attributes(params[:project])
+
+		@project = Project.find(params[:id])
+		if @project.project_status.nil?
+			@project.update_attribute(:project_status, 1)
+		elsif @project.project_status == 1
+			@project.update_attribute(:project_status, 0)
+		elsif @project.project_status == 0
+			@project.update_attribute(:project_status, 1)
+		end
 		redirect_to projects_path
 	end
 
 	def destroy
 		@project = Project.find(params[:id])
 		@project.destroy
+		redirect_to projects_path
+	end
+
+	def update_status_complete
+		
 		redirect_to projects_path
 	end
 end

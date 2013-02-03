@@ -7,7 +7,7 @@
 	<table class="home_projects_table">
 		<tr class="header-row">
 			<th>Project Name</th>
-			<th>Description</th>
+			<th>Short Description</th>
 			<th>Created On</th>
 			<th>Status</th>
 			<th></th>
@@ -16,16 +16,25 @@
 		</tr>
 		
 		<% @projects.each do |project| %>
-			<tr class="<%= cycle('even', 'odd') %>">
+			<tr class="<%= cycle('even', 'odd') %>" id="proj_row<%= project.id %>">
 				<td class="project_name"><%= project.project_name %></td>
-				<td class="project_descript"><%= project.project_description %></td>
+				<td class="project_descript">
+					<span class="project_desc_short" id="des_shortproj_row<%= project.id %>"><%= truncate(project.project_description, :length => 40) %></span>
+					<span class="project_desc_long" id="des_longproj_row<%= project.id %>"><%= project.project_description %></span>
+				</td>
 				<td><%= project.created_at %></td>
 				<% if project.project_status.nil? %>
-					<td class="status_cell">Not Complete</td>
+					<td class="status_cell">
+						<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put %>
+					</td>
 				<% elsif project.project_status == 1 %>
-					<td class="status_cell">Complete</td>
+					<td id="status_complete" class="status_cell">
+						<%= link_to 'Complete', project_path(project.id, project.project_status), :method => :put %>
+					</td>
 				<% else %>
-					<td class="status_cell">Not Complete</td>
+					<td class="status_cell">
+						<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put %>
+					</td>
 				<% end %>
 				<td></td>
 				<td><span class="delete_btn" id="<%= project.id %>">Delete</span></td>

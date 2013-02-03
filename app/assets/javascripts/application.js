@@ -25,6 +25,7 @@ $(document).ready(function(){
 		}
 	});
 
+
 	$('#add_project_btn').click(function(e){
 		e.preventDefault();
 		$('#new_project_wrapper').toggle();
@@ -49,5 +50,20 @@ $(document).ready(function(){
 		$('.home_projects_table').css('opacity', '1');
 		$('body').css('background-color', '#fff');
 		$('#top_nav').css('opacity', '1');
+	});
+
+	$('.even, .odd').click(function(){
+		var element_id = $(this).attr('id');
+		var element_height = $('#' + element_id).height();
+		//alert(element_height);
+		if(element_height <= 100){
+			$('#' + element_id).css('height', '300px');
+			$('#des_short' + element_id).hide();
+			$('#des_long' + element_id).show();
+		}else{
+			$('#' + element_id).css('height', '40px');
+			$('#des_short' + element_id).show();
+			$('#des_long' + element_id).hide();
+		}
 	});
 });
