@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+	layout 'devise_layout'
 	def index
 		
 	end

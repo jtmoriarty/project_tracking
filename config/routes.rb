@@ -1,9 +1,13 @@
 ProjectList::Application.routes.draw do
 
+  devise_for :users
+
   root :to => 'projects#index'
   resources :projects
   resources :user_session
   resources :user
+  resources :task
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,9 @@
+<div id="task-setup-wrapper">
+	<% form_for @task, :url => task_index_path do |f| %>
+		<div>
+			<%= f.label :task_name %>
+			<br />
+			<%= f.text_field :task_name %>
+		<div>
+	<% end %>
+</div>

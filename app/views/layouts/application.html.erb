@@ -8,11 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="translucent_overlay">
+	<div id="translucent_overlay"></div>
 	<div id="wrapper">
-		<%= render :partial => 'shared/top_nav' %>
+		<% if !user_signed_in? %>
+			<%= image_tag 'floating_paper.jpg', :id => 'left-img' %>
+		<% end %>
+
+		<% if user_signed_in? %>
+			<%= render :partial => 'shared/top_nav' %>
+		<% end %>
 		<%= yield %>
 	</div>
-</div>
 </body>
 </html>

@@ -1,0 +1,372 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	background-color: #eee;
+}
+
+#log-in-wrapper{
+	width: 400px;
+	height: 180px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #4ae;
+	color: #fff;
+	border: solid 1px #aaa;
+	font-family: Arial, Helvetica, sans-serif;
+	box-shadow: 1px 0px 20px 2px #333;
+	margin-top: -70px;
+}
+
+#left-img{
+	position: absolute;
+	margin-top: 70px;
+	margin-left: 100px;
+}
+
+#remember-me-wrap{
+	position: absolute;
+	margin-top: 60px;
+	float: left;
+}
+
+#remember_me_label{
+	font-size: 14px;
+}
+
+#sign-in-btn{
+	margin-left: 325px;
+	margin-top: 5px;
+	border: solid 1px #aaa;
+	font-size: 17px;
+	color: #000;
+	padding: 7px;
+	padding-right: 8px;
+	background-image: -webkit-linear-gradient(top, #eee 0%, #ccc 100%);
+	cursor: pointer;
+}
+
+#email-txt-field{
+	height: 20px;
+	width: 175px;
+	padding: 2px;
+	font-size: 16px;
+}
+
+#password-txt-field{
+	height: 20px;
+	width: 175px;
+	padding: 2px;
+	font-size: 16px;
+}
+
+#email-txt-wrap{
+	float:left;
+}
+
+#password-txt-wrap{
+	float: right;
+}
+
+#sign-in-heading{
+	width: 470px;
+	margin-left: -40px;
+	margin-top: -11px;
+	display: block;
+	background-color: #29a;
+	background-image: -webkit-linear-gradient(bottom, #26a 0%, #29f 100%);
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 10px;
+	box-shadow: 0px 2px 20px 1px #555;
+	text-shadow: -1px -1px 0px #333;
+}
+
+#log_out_btn{
+	position: absolute;
+	height: 22px;
+	width: 75px;
+	padding: 15px;
+	margin-top: -3px;
+	margin-left: 85%;
+	font-size: 20px;
+	color: #fff;
+	text-decoration: none;
+	border: solid 1px #000;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #999 100%);
+}
+
+#add_project_btn{
+	position: absolute;
+	height: 22px;
+	width: 148px;
+	padding: 15px;
+	margin-top: -3px;
+	margin-left: 100px;
+	font-size: 20px;
+	color: #fff;
+	text-decoration: none;
+	border: solid 1px #000;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #999 100%);
+}
+
+#add_project_btn:hover{
+	background-image: -webkit-linear-gradient(top, #ddd 0%, #aaa 100%);
+}
+
+.home_projects_table{
+	position: absolute;
+	border-collapse: collapse;
+	width: 89.4%;
+	margin-left: 147px;
+	margin-top: 45px;
+	border: solid 1px #777;
+}
+
+#translucent_overlay{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: #000;
+	z-index: 1000;
+	opacity: 0.6;
+	display: none;
+}
+
+#top_info{
+	position: absolute;
+	width: 99.2%;
+	padding: 10px;
+	margin-left: -6px;
+	top: -23px;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #bbb 100%);
+	font-size: 20px;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	border: solid 1px #777;
+}
+
+#filter_wrapper{
+	float: left;
+	margin-top: 45px;
+	margin-left: -8px;
+	height: 900px;
+	width: 150px;
+	background-color: #ccc;
+	border: solid 1px #777;
+}
+
+th{
+	padding: 10px;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #aaa 100%);
+	text-align: left;
+	font-size: 22px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+
+td{
+	height: 25px;
+	padding: 10px;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	vertical-align:text-top;
+}
+
+td.project_name{
+	width: 290px;
+}
+
+td.project_descript{
+	width: 450px;
+	padding-right: 50px;
+}
+
+#proj_status_btn{
+	text-decoration: none;
+	height: 25px;
+	width: 70px;
+	color: #000;
+}
+
+td.status_cell{
+	width: 130px;
+	height: 25px;
+	text-align: center;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #aaa 100%);
+}
+
+#status_complete{
+	background-image: -webkit-linear-gradient(top, #0f7 0%, #0e0 100%);
+}
+
+tr.even{
+	background-image: -webkit-linear-gradient(top, #fff 0%, #eee 100%);
+	border-bottom: solid 1px #777;
+}
+
+tr.odd{
+	background-image: -webkit-linear-gradient(top, #ddd 0%, #ccc 100%);
+}
+
+.project_desc_long{
+	display: none;
+}
+
+#project_desc_txt{
+	font-size: 26px;
+	padding: 10px;
+	border: solid 1px #aaa;
+}
+
+#project_name_txt{
+	height: 40px;
+	width: 460px;
+	padding: 10px;
+	font-size: 26px;
+	border: solid 1px #aaa;
+}
+
+label{
+	font-size: 26px;
+	font-weight: 650;
+}
+
+#char_right{
+	float: right;
+	font-size: 20px;
+}
+
+#new_project_form_wrapper{
+	width: 480px;
+	height: 520px;
+	padding: 20px;
+	background-color: #ddd;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#top_nav{
+	position: fixed;
+	width: 100%;
+	height: 45px;
+	margin-top: -22px;
+	margin-left: -12px;
+	padding: 10px;
+	background-color: #ddd;
+	border-bottom: solid 1px #aaa;
+	z-index: 900;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#save_project_btn{
+	position: absolute;
+	height: 60px;
+	width: 175px;
+	padding: 15px;
+	margin-top: -3px;
+	margin-left: 5px;
+	font-size: 20px;
+	color: #fff;
+	text-decoration: none;
+	border: solid 1px #000;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #999 100%);
+}
+
+#save_project_btn:hover{
+	background-image: -webkit-linear-gradient(top, #ddd 0%, #aaa 100%);
+	cursor: pointer;
+}
+
+#wrapper{
+	position: relative;
+	width: 100%;
+	top: 50px;
+}
+
+#new_project_wrapper{
+	position: fixed;
+	background-color: #ddd;
+	box-shadow: 0px 0px 10px 1px #222;
+	margin-top: 50px;
+	margin-left: 90px;
+	z-index: 905;
+	display: none;
+}
+
+#arrow{
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-bottom: 20px solid #ddd;
+	margin-top: -40px;
+	margin-bottom: 40px;
+}
+
+#all_proj_list{
+	width: 40%;
+}
+
+#application_title{
+	margin-left: 70%;
+	margin-top: 3px;
+	color: #fff;
+}
+
+#delete_pannel_wrapper{
+	position: fixed;
+	margin-top: 200px;
+	margin-left: 500px;
+	width: 500px;
+	height: 130px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px 1px #333;
+	font-family: Arial, Helvetica, sans-serif;
+	display: none;
+	z-index: 1100;
+}
+
+#delete_pannel_header{
+	height: 15px;
+	width: 510px;
+	padding: 15px;
+	margin-top: -20px;
+	margin-left: -20px;
+	margin-bottom: 20px;
+	background-image: -webkit-linear-gradient(top, #ccc 0%, #aaa 100%);
+	color: #fff;
+	font-size: 16px;
+	border-bottom: solid 1px #aaa;
+	cursor: move;
+}
+
+#delete_pannel_actions{
+	height: 15px;
+	width: 510px;
+	padding: 15px;
+	margin-top: 40px;
+	margin-left: -20px;
+	background-image: -webkit-linear-gradient(top, #ddd 0%, #bbb 100%);
+	color: #fff;
+	font-size: 16px;
+}
+
+.delete_pannel_close_btn{
+	display: block;
+	float: right;
+	color: #fff;
+}
+
+.delete_pannel_close_btn:hover{
+	color: #eee;
+	cursor: pointer;
+}
+
+.delete_btn{
+	cursor: pointer;
+}

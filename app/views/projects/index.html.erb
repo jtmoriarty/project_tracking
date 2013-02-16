@@ -8,45 +8,55 @@
 
 		</div>
 
-	<table class="home_projects_table">
-		<h3 id="top_info">Listing all Projects</h3>
-		<tr class="header-row">
-			<th>Project Name</th>
-			<th>Short Description</th>
-			<th>Created On</th>
-			<th>Status</th>
-			<th></th>
-			<th>Actions</th>
-			<th></th>
-		</tr>
-		
-		<% @projects.each do |project| %>
-			<tr class="<%= cycle('even', 'odd') %>" id="proj_row<%= project.id %>">
-				<td class="project_name"><%= project.project_name %></td>
-				<td class="project_descript">
-					<span class="project_desc_short" id="des_shortproj_row<%= project.id %>"><%= truncate(project.project_description, :length => 40) %></span>
-					<span class="project_desc_long" id="des_longproj_row<%= project.id %>"><%= project.project_description %></span>
-				</td>
-				<td><%= project.created_at %></td>
-				<% if project.project_status.nil? %>
-					<td class="status_cell">
-						<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
-					</td>
-				<% elsif project.project_status == 1 %>
-					<td id="status_complete" class="status_cell">
-						<%= link_to 'Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
-					</td>
-				<% else %>
-					<td class="status_cell">
-						<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
-					</td>
-				<% end %>
-				<td></td>
-				<td><span class="delete_btn" id="<%= project.id %>">Delete</span></td>
-				<%= render :partial => 'delete_pannel', :locals => {:id => project.id} %>
-				<td><%= link_to 'Edit', edit_project_path(project.id) %></td>
+		<table class="home_projects_table">
+			<h3 id="top_info">Listing all Projects</h3>
+			<tr class="header-row">
+				<th>Project Name</th>
+				<th>Short Description</th>
+				<th>Created On</th>
+				<th>Status</th>
+				<th></th>
+				<th>Actions</th>
+				<th></th>
+				<th></th>
 			</tr>
-		<% end %>
-	</table>
-</div>
+		
+			<% @projects.each do |project| %>
+				<tr class="<%= cycle('even', 'odd') %>" id="proj_row<%= project.id %>">
+					<td class="project_name"><%= project.project_name %></td>
+					<td class="project_descript">
+						<span class="project_desc_short" id="des_shortproj_row<%= project.id %>"><%= truncate(project.project_description, :length => 40) %></span>
+						<span class="project_desc_long" id="des_longproj_row<%= project.id %>"><%= project.project_description %></span>
+					</td>
+					<td>
+						<%= project.created_at %>
+					</td>
+					<% if project.project_status.nil? %>
+						<td class="status_cell">
+							<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
+						</td>
+					<% elsif project.project_status == 1 %>
+						<td id="status_complete" class="status_cell">
+							<%= link_to 'Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
+						</td>
+					<% else %>
+						<td class="status_cell">
+							<%= link_to 'Not Complete', project_path(project.id, project.project_status), :method => :put, :id => 'proj_status_btn' %>
+						</td>
+					<% end %>
+					<td></td>
+					<td>
+						<span class="delete_btn" id="<%= project.id %>">Delete</span>
+					</td>
+					<%= render :partial => 'delete_pannel', :locals => {:id => project.id} %>
+					<td>
+						<%= link_to 'Edit', edit_project_path(project.id) %>
+					</td>
+					<td>
+						<%= link_to 'Task setup', task_index_path, :id => 'task-setup' %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
 </div>
